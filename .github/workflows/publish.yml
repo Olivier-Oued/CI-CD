@@ -10,7 +10,7 @@ jobs:
       
       - name: Vérifier l’intention
         run: |
-          grep "Site Version 1" index.html
+          grep "Site Version 1" index3.html
       - name: Publier sur GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:

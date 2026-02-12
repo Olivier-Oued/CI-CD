@@ -14,8 +14,8 @@ jobs:
 
       - name: Vérifier index3.html
         run: |
-          if [ ! -f index.html ]; then
-            echo "index.html manquant"
+          if [ ! -f index3.html ]; then
+            echo "index3.html manquant"
             exit 1
           fi
 
