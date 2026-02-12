@@ -1,0 +1,21 @@
+name: Deploy GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["CI Tests"]
+    types:
+      - completed
+
+jobs:
+  deploy-pages:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
